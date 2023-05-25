@@ -14,4 +14,4 @@ Activate the virtual environment through **poetry shell**
 3. Download these datasets to run the final Jupyter notebooks:
   * Yelp Academic Dataset (https://www.yelp.com/dataset)
   * Twitter Dataset (Private)
-4. Navigate from the root directory ML_project -> 'Final Reports'. There you will find multiple Jupyter notebooks with that contains sentiment classification and analysis for both Yelp reviews and tweets.
+4. Navigate from the root directory ML_project -> 'Final Reports'. There, you will find multiple Jupyter notebooks with that contains sentiment classification and analysis for both Yelp reviews and tweets.
