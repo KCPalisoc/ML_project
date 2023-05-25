@@ -2,11 +2,8 @@
 A Capstone project for the CAPP 30254 – Machine Learning for Public Policy course where a sentiment analysis of the Affordable Care Act was conducted to analyze public perceptions with five different models: Multinomial Naive Bayes, Decision Tree Classifier, Random Forest Classifier, Logistic Regression, and Neural Networks.
 
 | Most Frequent Negative @'s | Most Frequent Postive @'s |
-|----------------------------|--------------------------------|
 | ![Alt Text](https://github.com/KCPalisoc/ML_project/blob/main/Graphs/ats.png) | ![Alt Text](https://github.com/KCPalisoc/ML_project/blob/main/Graphs/pos_at.png) |
-|-|-|
 | Most Frequent Negative Hashtags | Most Frequent Postive Hashtags |
-|----------------------------|--------------------------------|
 | ![Alt Text](https://github.com/KCPalisoc/ML_project/blob/main/Graphs/hashtags.png) | ![Alt Text](https://github.com/KCPalisoc/ML_project/blob/main/Graphs/pos_hash.png) |
 
 
