@@ -7,7 +7,6 @@ Public policy analysts often encounter classification tasks in which there is a 
 ## Instructions to execute project codes
 NOTE: All codes to be run from within the project root directory
 
-Setting up Virtual Environment and installing required packages:
 1. Clone this repo
 2. From within project root directory ML_project run **poetry install** (takes ~2 minutes for all packages to install)
 Activate the virtual environment through **poetry shell**
