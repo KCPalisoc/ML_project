@@ -80,6 +80,6 @@ bar_options = ["Status", "Pre/Post Paris Agreement"]
 
 
 
-country_options = [{"label": country, "value": country} for country in ll_df["Country"].unique()]
+# country_options = [{"label": country, "value": country} for country in ll_df["Country"].unique()]
 
-hl_data_table_options = [{"name": i, "id": i} for i in hl_df.loc[:, compare_col]]
+# hl_data_table_options = [{"name": i, "id": i} for i in hl_df.loc[:, compare_col]]

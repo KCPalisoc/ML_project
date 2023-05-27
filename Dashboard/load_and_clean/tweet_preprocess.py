@@ -20,7 +20,7 @@ new_stopwords = 'rt'
 stop_words.add(new_stopwords)
 
 #Change the path to the path on your machine
-df = pd.read_csv('../Downloads/obamacare_19_23.csv')
+df = pd.read_csv('Dashboard/Data/obamacare_19_23.csv')
 tokenizer=TweetTokenizer()
 df['Tokenized_Text'] = df['Text'].apply(tokenizer.tokenize)
 
