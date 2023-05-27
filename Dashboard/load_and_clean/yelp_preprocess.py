@@ -1,7 +1,6 @@
 import pandas as pd
-import json
 
-yelp_sample_unequal = pd.read_json('Dashboard/Data/yelp_sample_30_000.json', lines=True)
+yelp_sample_unequal = pd.read_csv('Dashboard/Data/yelp_reviews_35_000.csv')
 
 yelp_sample_unequal['length'] = yelp_sample_unequal['text'].apply(len)
 yelp_sample_unequal['stars'] = yelp_sample_unequal['stars'].astype(float)

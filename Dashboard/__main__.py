@@ -15,7 +15,7 @@ from Dashboard.inputs import header_style, small_dropdown_style, \
                                hl_data_table_text, bar_filter, bar_options, \
                                 ll_data_table_cell
                                # country_options, hl_data_table_options, 
-from Dashboard.load_and_clean.yelp_preprocess import yelp_sample_unequal, yelp_sample_equal \
+from Dashboard.load_and_clean.yelp_preprocess import yelp_sample_unequal, yelp_sample_equal, \
                                                      x_unequal, y_unequal, x_equal, y_equal
 # from Dashboard.graphs.starting_graphs import logreg_fig, linreg_fig, hist_fig, \
                                          # map_fig, scatter_fig, bar_fig, avg_commit_fig
