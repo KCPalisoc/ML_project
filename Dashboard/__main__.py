@@ -120,4 +120,4 @@ app.layout = dbc.Container([
 fluid=True, style={"backgroundColor": "#D2E5D0"})
 
 if __name__ == "__main__":
-    app.run_server(debug=True, host="0.0.0.0", port=3005)
+    app.run_server(debug=True, host="0.0.0.0", port=3105)
