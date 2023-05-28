@@ -60,19 +60,16 @@ bottom_table_cols = [{"name": "Project Name", "id": "Project Name"},
 
 # Filter Options
 
-paris_filter = [{"label": "Pre-Paris Agreement", 
-                 "value": "(Pre-Paris Agreement)"}, 
-                {"label": "Post-Paris Agreement", 
-                 "value": "(Post-Paris Agreement)"}]
+ngram_filter = [{'label': 'Unigram', 'value': 'unigram'}, 
+                {'label': 'Bigram', 'value': 'bigram'}, 
+                {'label': 'Trigram', 'value': 'trigram'}]
 
-source_filter = [{"label": "Source: Asian Development Bank", "value": "ADB"}, 
-                 {"label": "Source: World Bank", "value": "World Bank"}]
+star_filter = [{'label': 'All Stars', 'value': 'all_stars'}, 
+                {'label': '1 and 5 Stars', 'value': '1_5_stars'}, 
+                {'label': '1, 3, and 5 Stars', 'value': '1_3_5_stars'}]
 
-map_dd_options = ["Project Count", "Climate Change Project Count",
-                  "Cumulative Project Funding", 
-                  "Climate Change Project Funding"]
-
-bar_options = ["Status", "Pre/Post Paris Agreement"]
+equality_filter = [{'label': 'Equal', 'value': 'equal'},
+                   {'label': 'Unequal', 'value': 'unequal'}]
 
 # country_options = [{"label": country, "value": country} for country in ll_df["Country"].unique()]
 
