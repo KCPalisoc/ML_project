@@ -5,19 +5,16 @@ Dictionary and List Inputs for the Dashboard
 # Style Dictionaries
 
 header_style = {"text-align": "center",
-                "font-family": "Helvetica",
-                "color": "#65463E"}
+                "font-family": "Helvetica"}
 
 small_dropdown_style = {"display": "inline-block",
                         "text-align": "center",
                         "font-family": "Helvetica",
-                        "color": "#65463E",
                         "width": "60%"}
 
 big_dropdown_style = {"display": "inline-block",
                       "text-align": "center",
                       "font-family": "Helvetica",
-                      "color": "#65463E",
                       "width": "85%"}
 
 plot_style = {'width': "100%"}
@@ -30,7 +27,6 @@ hl_reg_style = {'display': 'inline-block'}
 
 bar_filter = {"width": "40%", 
               "display": "inline-block", 
-              "color": "#65463E", 
               "font-family": "Helvetica"}
 
 hl_reg_layout_style = {"width": "100%", 
@@ -77,8 +73,6 @@ map_dd_options = ["Project Count", "Climate Change Project Count",
                   "Climate Change Project Funding"]
 
 bar_options = ["Status", "Pre/Post Paris Agreement"]
-
-
 
 # country_options = [{"label": country, "value": country} for country in ll_df["Country"].unique()]
 

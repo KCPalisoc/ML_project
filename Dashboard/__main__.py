@@ -15,8 +15,7 @@ from Dashboard.inputs import header_style, small_dropdown_style, \
                                hl_data_table_text, bar_filter, bar_options, \
                                 ll_data_table_cell
                                # country_options, hl_data_table_options, 
-from Dashboard.load_and_clean.yelp_preprocess import yelp_sample_unequal, yelp_sample_equal, \
-                                                     x_unequal, y_unequal, x_equal, y_equal
+from Dashboard.Graphs.graph_constructor import scatter_graph, graph_score, graph_time
 # from Dashboard.graphs.starting_graphs import logreg_fig, linreg_fig, hist_fig, \
                                          # map_fig, scatter_fig, bar_fig, avg_commit_fig
 
@@ -25,12 +24,13 @@ from Dashboard.load_and_clean.yelp_preprocess import yelp_sample_unequal, yelp_s
 
 app.layout = dbc.Container([
     html.Br(),
-    dbc.Row(html.H1(""), 
+    dbc.Row(html.H1("Understanding Public Perceptions of the ObamaCare Program: \
+                    A Sentiment Analysis Approach Utilizing Open-Source Data"), 
                     style=header_style,
                     justify='center'),
     html.Br(),
 
-    dbc.Row(html.H3(""), 
+    dbc.Row(html.H3("Exploratory Review of Yelp Review Data"), 
                     style=header_style,
                     justify="center"),
 
@@ -40,7 +40,7 @@ app.layout = dbc.Container([
 
     html.Br(),
 
-    dbc.Row(html.H3("Static Regressions: "), 
+    dbc.Row(html.H3("Exploratory Review of Twitter Data"), 
                     style=header_style,
                     justify="center"),
     html.Br(),
@@ -48,7 +48,7 @@ app.layout = dbc.Container([
     dbc.Row(html.Br()),
     html.Br(),
 
-    dbc.Row(html.H3("Static Histograms: "), 
+    dbc.Row(html.H3("Modeling Sentiment Analysis"), 
                     style=header_style,
                     justify="center"),
     
@@ -58,24 +58,24 @@ app.layout = dbc.Container([
     dbc.Row(html.Br()),
     html.Br(),
     
-    dbc.Row(html.H2("Climate Change Project Deep Dive by Country"), 
+    dbc.Row(html.H2("Applying Twitter Data to Optimal ML Model"), 
                     style=header_style,
                     justify="center"),
     html.Br(),
 
-    dbc.Row(html.H4("Primary Filter: Select a Country"), 
+    dbc.Row(html.H4("Primary Filter: "), 
                     style=header_style,
                     justify="center"),
 
     html.Br(),
 
-    dbc.Row(html.H4("Secondary Filter: Select Another Country to Compare"), 
+    dbc.Row(html.H4("Secondary Filter: "), 
                     style=header_style,
                     justify="center"),
     
     html.Br(),
     
-    dbc.Row(html.H3("Data Table: Comparison of Country GDP and Climate Vulnerability"), 
+    dbc.Row(html.H3("Data Table: "), 
                     style=header_style,
                     justify="center"),
 
@@ -117,7 +117,7 @@ app.layout = dbc.Container([
 
     html.Br()],
 
-fluid=True, style={"backgroundColor": "#D2E5D0"})
+fluid=True, style={"backgroundColor": "#4CB5F5"})
 
 if __name__ == "__main__":
     app.run_server(debug=True, host="0.0.0.0", port=3105)
