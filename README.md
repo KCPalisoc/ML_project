@@ -3,11 +3,11 @@ A Capstone project for the CAPP 30254 – Machine Learning for Public Policy cou
 
 | Most Frequent Negative @'s | Most Frequent Postive @'s |
 |----------------------------|---------------------------|
-| ![neg @](https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/ats.png) | ![pos @](https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/pos_at.png) |
+| ![neg @]([https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/ats.png](https://github.com/KCPalisoc/ML_project/blob/fe53c5091acac0ccf2b91c6977568425549752ea/Dashboard/Graphs/ats.png)) | ![pos @][(https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/pos_at.png)](https://github.com/KCPalisoc/ML_project/blob/fe53c5091acac0ccf2b91c6977568425549752ea/Dashboard/Graphs/pos_at.png) |
 
 | Most Frequent Negative Hashtags | Most Frequent Postive Hashtags |
 |----------------------------|---------------------------|
-| ![neg hash](https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/hashtags.png) | ![pos hash](https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/pos_hash.png) |
+| ![neg hash][(https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/hashtags.png)](https://github.com/KCPalisoc/ML_project/blob/fe53c5091acac0ccf2b91c6977568425549752ea/Dashboard/Graphs/hashtags.png) | ![pos hash][(https://github.com/KCPalisoc/ML_project/Dashboard/Graphs/pos_hash.png)](https://github.com/KCPalisoc/ML_project/blob/fe53c5091acac0ccf2b91c6977568425549752ea/Dashboard/Graphs/pos_hash.png) |
 
 
 ## Project Abstract
