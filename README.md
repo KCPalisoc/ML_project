@@ -3,11 +3,11 @@ A Capstone project for the CAPP 30254 – Machine Learning for Public Policy cou
 
 | Most Frequent Negative @'s | Most Frequent Postive @'s |
 |----------------------------|---------------------------|
-| ![neg @] ats.png | ![pos @]pos_at.png|
+| ![neg @](https://github.com/KCPalisoc/ML_project/blob/main/Dashboard/Graphs/ats.png?raw=true) | ![pos @](https://github.com/KCPalisoc/ML_project/blob/main/Dashboard/Graphs/pos_at.png?raw=true)|
 
 | Most Frequent Negative Hashtags | Most Frequent Postive Hashtags |
 |----------------------------|---------------------------|
-| ![neg hash]hashtags.png | ![pos hash](https://github.com/KCPalisoc/ML_project/blob/main/Dashboard/Graphs/pos_hash.png?raw=true)|
+| ![neg hash](https://github.com/KCPalisoc/ML_project/blob/main/Dashboard/Graphs/hashtags.png?raw=true) | ![pos hash](https://github.com/KCPalisoc/ML_project/blob/main/Dashboard/Graphs/pos_hash.png?raw=true)|
 
 
 ## Project Abstract
