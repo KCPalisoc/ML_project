@@ -32,16 +32,23 @@ bar_filter = {"width": "40%",
 hl_reg_layout_style = {"width": "100%", 
                        "display": "inline-block"}
 
-hl_data_table_text = {"width": "100px", 
-                      "minWidth": "100px", 
-                      "maxWidth": "100px", 
-                      "textOverflow": "ellipsis", 
-                      "font-family": "Helvetica"}
+data_table_text = {"width": "50px", 
+                   "minWidth": "50px", 
+                   "maxWidth": "50px", 
+                   "textOverflow": "ellipsis", 
+                   "font-family": "Helvetica"}
 
-ll_data_table_cell = {"text-align": "left", 
+data_table_cell = {"text-align": "left", 
                       "width": 4,
                       "textOverflow": "ellipsis",
                       "font-family": "Helvetica"}
+yelp_sample_style = [{'if': {'column_id': 'stars'}, 'width': '70px'},
+                     {'if': {'column_id': 'useful'}, 'width': '70px'},
+                     {'if': {'column_id': 'funny'}, 'width': '70px'},
+                     {'if': {'column_id': 'cool'}, 'width': '70px'},
+                     {'if': {'column_id': 'date'}, 'width': '105px'}]
+
+tweet_sample_style = [{'if': {'column_id': 'Date'}, 'width': '105px'}]
 
 # Column Lists
 
@@ -51,12 +58,8 @@ compare_col = ['Country',
                'Project Funding (in Millions)',
                'Climate Change Project Funding (in Millions)']
 
-bottom_table_cols = [{"name": "Project Name", "id": "Project Name"},
-                     {"name": "Status", "id": "Status"},
-                     {"name": "Commitment Amount", "id": "Commitment Amount"},
-                     {"name": "Effective Date", "id": "Effective Date"},
-                     {"name": "Project URL", "id": "Project URL"},
-                     {"name": "Search Terms", "id": "Tokens"}]
+bottom_table_cols = [{"name": "Score", "id": "score"},
+                     {"name": "Runtime", "id": "runtime"}]
 
 # Filter Options
 
@@ -70,6 +73,15 @@ star_filter = [{'label': 'All Stars', 'value': 'all_stars'},
 
 equality_filter = [{'label': 'Equal', 'value': 'equal'},
                    {'label': 'Unequal', 'value': 'unequal'}]
+
+model_filter = [{'label': 'Multinomial Naive Bayes', 'value': 'MultinomialNB()'}, 
+                {'label': 'Decision Tree Classifier', 'value': 'DecisionTreeClassifier()'}, 
+                {'label': 'Random Forest Classifier', 'value': 'RandomForestClassifier()'},
+                {'label': 'Logistic Regression', 'value': 'LogisticRegression()'}]
+
+token_options = [{'label': 'Hashtags', 'value': '#'},
+                 {'label': 'Ats', 'value': '@'},
+                 {'label': 'Words', 'value': 'words'}]
 
 # country_options = [{"label": country, "value": country} for country in ll_df["Country"].unique()]
 

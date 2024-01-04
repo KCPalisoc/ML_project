@@ -6,6 +6,7 @@ import string
 nltk.download('stopwords')
 nltk.download('wordnet')
 from sklearn.feature_extraction.text import CountVectorizer
+import datetime as dt
 
 #Change output_file_path to the path on your machine
 stop_words = set(stopwords.words('english'))

@@ -41,10 +41,10 @@ def scatter_graph(combo, score, time_list, model_name):
 
     #labels 
     ax.set_ylabel('Accuracy')
-    ax.set_xlabel('Run Time')
+    ax.set_xlabel('Runtime')
     ax.set_title(model_name + ' Accuracy Plot by Run Time')
     
-    plt.show()
+    return fig
 
 
 def graph_score(combo, score, model_name):

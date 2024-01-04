@@ -1,14 +1,22 @@
 import pandas as pd
 from itertools import product
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, classification_report
 from sklearn.model_selection import train_test_split
 import time
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.exceptions import ConvergenceWarning
+import warnings
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 yelp_sample_unequal = pd.read_csv('Dashboard/Data/yelp_reviews_35_000.csv')
 
 yelp_sample_unequal['length'] = yelp_sample_unequal['text'].apply(len)
 yelp_sample_unequal['stars'] = yelp_sample_unequal['stars'].astype(float)
+yelp_sample_unequal['date'] = pd.to_datetime(yelp_sample_unequal['date']).dt.date
 
 yelp_classify = yelp_sample_unequal.loc[:, ['stars', 'text']]
 
@@ -60,13 +68,22 @@ def n_gram_df(str, df):
     else: 
         trigram_vocab = (CountVectorizer(ngram_range = (3, 3), stop_words='english')
                          .fit(df.loc[:, 'text']))
+        
         return trigram_vocab.transform(x_df)
     
-def model_to_acuracy(model,x_train, x_test, y_train, y_test, combo):
+def model_to_acuracy(model, x_train, x_test, y_train, y_test):
     """
     This function takes in the train and test data each variation, 
     visualizes, calculates model prediction, and returns accuracy score as a numpy int.
     """
+    if model == 'MultinomialNB()':
+        model = MultinomialNB()
+    elif model == 'DecisionTreeClassifier()':
+        model = DecisionTreeClassifier()
+    elif model == 'RandomForestClassifier()':
+        model = RandomForestClassifier()
+    elif model == 'LogisticRegression()':
+        model = LogisticRegression()
 
     model.fit(x_train, y_train)
     predmnb = model.predict(x_test)
@@ -74,52 +91,51 @@ def model_to_acuracy(model,x_train, x_test, y_train, y_test, combo):
 
     #accuracy score only for even data
     if y.value_counts().nunique() == 1:
-
         score = round(accuracy_score(y_test, predmnb) * 100, 2)
-        print(combo, "Accuracy Score:", score)
-        print()
 
     #f1 for uneven data 
     else:
         score = round(f1_score(y_test, predmnb, average='weighted') * 100, 2)
-        print(combo, "f1_score:", score)
-        print()
 
     return score
 
-def hyper_tuning(yelp_sample_equal, yelp_sample_unequal, model, hyper_combo):
+def hyper_tuning(yelp_sample_equal, yelp_sample_unequal, model, star, ngram, equality):
     """
     This function calculates the accuracy score for each variation of 
     hyperpermeters for a given model
     """
 
+    if equality == 'equal':
+        yelp_classify_equal = yelp_sample_equal.loc[:, ['stars', 'text']]
+        star_class_df = star_df(star, yelp_classify_equal)
+        x_df = n_gram_df(ngram, star_class_df)
+    
+    else: 
+        yelp_classify_unequal = yelp_sample_unequal.loc[:, ['stars', 'text']]
+        star_class_df = star_df(star, yelp_classify_unequal)
+        x_df = n_gram_df(ngram, star_class_df)
+
+    y_df = star_class_df['stars']
+    x_train, x_test, y_train, y_test = train_test_split(x_df, 
+                                                        y_df, 
+                                                        test_size=0.2, 
+                                                        random_state=101)
+    start_time = time.time()
+    score = model_to_acuracy(model, x_train, x_test, y_train, y_test)
+    end_time = time.time()
+    runtime = round(((float(end_time) - float(start_time)) / float(60)), 2)
+
+    return score, runtime
+
+def list_builder(yelp_sample_equal, yelp_sample_unequal, model, combo):
+    
     score_lst = []
     time_lst = []
-    
-    for tup in hyper_combo:
-        
-        star, gram, equal = tup
 
-        if equal == 'equal':
-
-            yelp_classify_equal = yelp_sample_equal.loc[:, ['stars', 'text']]
-            star_class_df = star_df(star, yelp_classify_equal)
-            x_df = n_gram_df(gram, star_class_df)
-        else: 
-            yelp_classify_unequal = yelp_sample_unequal.loc[:, ['stars', 'text']]
-            star_class_df = star_df(star, yelp_classify_unequal)
-            x_df = n_gram_df(gram, star_class_df)
-
-        y_df = star_class_df['stars']
-
-        (x_train, x_test, y_train, y_test) = train_test_split(x_df, 
-                                                 y_df, 
-                                                 test_size=0.2, 
-                                                 random_state=101)
-        start_time = time.time()
-        score = model_to_acuracy(model,x_train, x_test, y_train, y_test, tup)
-        end_time = time.time()
+    for tup in combo:
+        star, ngram, equality = tup
+        score, time = hyper_tuning(yelp_sample_equal, yelp_sample_unequal, model, star, ngram, equality)
         score_lst.append(score)
-        time_lst.append((float(end_time) - float(start_time))/float(60))
+        time_lst.append(time)
 
     return score_lst, time_lst
